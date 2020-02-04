@@ -1,4 +1,4 @@
-# lineBot
+# lineBotゆいちゃん
 awsとpythonの勉強と、自分の癒しと、節約と、スケジュールとTODOを忘れないために趣味で作っているもの。
 
 だったのですが、商品化につき、プライベートリポジトリに移行しました…。
@@ -9,13 +9,9 @@ awsとpythonの勉強と、自分の癒しと、節約と、スケジュール�
 
 話す人話す人にダサいって言われるけど…
 
-知ってる。知ってるけど、これが私の限界ww
+とにかく楽しく作るの！で、お金が付いてきたら最高じゃん？
 
-諦めて開き直る！
-
-とにかく楽しく作るの！で、お金が付いてきたら最高だよね？
-
-しかもね、エンジョイクリエイトって会社ないのよ？
+しかも、エンジョイクリエイトって会社ないのよ？
 
 かぶらないのよ？
 
@@ -23,25 +19,30 @@ awsとpythonの勉強と、自分の癒しと、節約と、スケジュール�
 
 いいじゃないか……
 
+## ゆいちゃんとその派生アプリ
 
-## ぶるーでぃちぇっかー
-対企業に物を売るために、とりあえず実績を作るべく開発したもの。
+設定ファイルがdynamoに入ってて、アプリごとに設定を変えられる。
+
+設定を変えると、色々できる。
+
+### ゆいちゃん
+
+もともと作っていたもの。
+
+今は開発環境として使っているから、すぐ調子悪くなるけど、よかったら遊んであげて下さい！
+
+一応ちゃんと動くようになるのは2020年6末を目指しています！
+
+[ゆいちゃん](https://lin.ee/kap69GX)
+
+### ぶるーでぃちぇっかー
+toBに物を売るために、とりあえず実績を作るべく開発したもの。
 
 生理予定日と排卵予定日がボタンタップだけで予測できます。
 
 通知もされます。
 
 [ぶるーでぃちぇっかー](https://encr.jp/blue)
-
-
-## ゆいちゃん
-開発環境として使っているから、すぐ調子悪くなるけど、
-よかったら遊んであげて下さい！
-
-一応ちゃんと動くようになるのは6末を目指しています！
-
-[ゆいちゃん](https://lin.ee/kap69GX)
-
 
 ## 使ってるもの(一部これから作りたい＆使いたいもの)
 pegmatiteという神様ツールをclomeにアドインすると、↓のumlが全部図で見れます！
@@ -50,10 +51,7 @@ https://chrome.google.com/webstore/detail/pegmatite/jegkfbnfbfnohncpcfcimepibmhl
 ### プログラム本体
 こんな感じで動いている。
 
-設定ファイルがdynamoに入ってて、ゆいちゃんも予約アプリもぶるーでぃちぇっかーも同じプログラムで出来てる。
-
 awsじゃないものはどうやって書いたらいいんだろう…
-
 独自画像埋め込みたいんだけど…。
 
 ```uml
@@ -120,7 +118,7 @@ skinparam nodeBackgroundColor White
 skinparam agentBackgroundColor White
 skinparam artifactBackgroundColor White
 
-USER(user)
+USER(user,github)
 AWSCLOUD(aws) {
   AWSCODEPIPELINE(pipeline)
   AWSCLOUDFORMATION(cloudFormation) 
@@ -186,8 +184,8 @@ AWSCLOUD(aws) {
   LAMBDAFUNCTION(analysis,analysis)
   LAMBDAFUNCTION(getReplyMessage,getReplyMessage)
   LAMBDAFUNCTION(getLineBotUserData,getLineBotUserData)
-  LAMBDAFUNCTION(editLineBotDynamo,editLineBotUserData)
-  LAMBDAFUNCTION(putLineBotDynamo,putLineBotUserData)
+  LAMBDAFUNCTION(editLineBotUserData,editLineBotUserData)
+  LAMBDAFUNCTION(putLineBotUserData,putLineBotUserData)
   LAMBDAFUNCTION(putLineBot,putLineBotMaster)
  }
  AMAZONDYNAMODB(dynamo) {
